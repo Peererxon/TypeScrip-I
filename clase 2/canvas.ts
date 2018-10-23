@@ -1,3 +1,6 @@
+
+
+
 var c:any =document.getElementById("canvas");
  if (c!==undefined && c.getContext){
      console.log("El ancho del canvas es de: ", c.width);
@@ -6,7 +9,7 @@ var c:any =document.getElementById("canvas");
      context.beginPath();
      context.moveTo(0,0);
      context.lineTo(300,150);
-     context.lineTo(300,0);
+     context.lineTo(150,500);
      context.closePath();
      context.fill();
      context.stroke();
