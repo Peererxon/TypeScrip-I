@@ -15,7 +15,11 @@ if (c1 !== undefined && c1.getContext) {
     var ancho = c1.width;
     var alto = c1.height;
     var ctx1 = c1.getContext("2d");
+<<<<<<< HEAD
     pintartriangulo({ x: 200, y: 0 }, { x: ancho, y: alto }, { x: 0, y: alto }, ctx1);
+=======
+    pintartriangulo({ x: 2, y: 0 }, { x: ancho, y: alto }, { x: 0, y: alto }, ctx1);
+>>>>>>> b1d71a041f8ff23fbbd093708ac235879f59d057
     ctx1.stroke();
     var ctx2 = c2.getContext("2d");
     pintartriangulo({ x: 50, y: 0 }, { x: ancho, y: alto }, { x: 0, y: alto }, ctx2);
