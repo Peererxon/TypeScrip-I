@@ -1,0 +1,30 @@
+body{
+    background-color: lightgray;
+    width: 100%;
+}
+canvas{
+    background: white;
+    display: none;
+}
+input{
+    position: absolute;
+    padding: 10px 20px;
+    color: white;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px grey;
+
+}
+input:hover{
+    transition: all;
+    transition-duration: 1s;
+    background: lightblue;
+    color: black;
+    box-shadow: 2px 2px 5px grey;
+}
+
+input:focus{
+	outline: 0px;
+}

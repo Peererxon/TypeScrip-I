@@ -1,0 +1,48 @@
+
+    pintar_tren(context: CanvasRenderingContext2D, cuadro: boolean = false, circulo: boolean = false, triangulo: boolean = false,
+        octagono: boolean = false, pentagono: boolean = false,hexagono: boolean = false, 
+        p1: punto, p2: punto, p3: punto, p4: punto, p5: punto, p6: punto, p7: punto, radio: number,color) {
+        color = "rgb("+Math.ceil(Math.random()*255)+","+Math.ceil(Math.random()*255)+","+
+            Math.ceil(Math.random()*255)+")";     
+
+        if (cuadro) {
+            context.beginPath();
+            context.moveTo(p1.x, p1.y);
+            context.fillStyle=color; 
+            context.lineTo(p2.x, p2.y);
+            context.lineTo(p3.x, p3.y);
+            context.lineTo(p4.x, p4.y);
+            context.closePath();
+            context.stroke();
+        }
+
+        else {
+            if (circulo) {
+                context.beginPath();
+                context.arc(p1.x, p1.y, radio, 0, Math.PI * 2);
+                context.closePath();
+                context.stroke();
+
+            }
+            else {
+                if (triangulo) {
+                    context.beginPath();
+                    context.moveTo(p1.x, p1.y);
+                    context.lineTo(p2.x, p2.y);
+                    context.lineTo(p3.x, p3.y);
+                    context.closePath();
+                    context.stroke();
+                }
+                else {
+                    if (octagono) {
+                        context.beginPath();
+                        context.moveTo(p1.x, p1.y);
+                        context.lineTo(p2.x, p2.y);
+                        context.lineTo(p3.x, p3.y);
+                        context.lineTo(p4.x, p4.y);
+                        context.lineTo(p5.x, p5.y);
+                        context.lineTo(p6.x, p6.y);
+                        context.lineTo(p7.x, p7.y);
+                        context.closePath();
+                        context.stroke();
+                    }

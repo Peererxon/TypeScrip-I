@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#generar{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-family: sans-serif;
+    padding: 10px 20px;
+    background: lightslategray;
+    border: solid black 1px;
+    color: white;
+    font-size: 25px;
+}

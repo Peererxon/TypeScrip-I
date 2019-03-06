@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="lienzo1" width="250" height="240">Su navegador no soporta canvas  </canvas>
+
+<script>
+var canvas1 = document.getElementById("lienzo1");
+		if (canvas1 && canvas1.getContext) {
+		var ctx = canvas1.getContext("2d");
+			if (ctx) {
+					ctx.fillStyle = "#6ab150";
+					ctx.strokeStyle = "black";
+					ctx.lineWidth = 3;
+																	
+					var X = 0;
+					var Y = 0;
+					// para variar el tamaño de la figura segun el radio de circunferencia circunscrita para los poligonos
+					var R = 100; 
+						
+					// Para elegir los lados del poligono si L =4 lados tenmos cuadrado, si L = 5 poligono, etc		
+					var L = 5;  
+					
+					var rad = (2*Math.PI)/L;
+					// traslada el contexto en el centro del canvas 
+					// para poder girar el contexto alrededor del centro 
+
+					// Para mover el centro de la figura dhp tan solo se coloca el valor de la coordenada en 
+					//(x =canvas1.width/2 ,y = canvas1.height/2) 
+					ctx.translate(canvas1.width/2, canvas1.height/2);
+					
+					//gira el contexto unos 270deg
+					ctx.rotate(3*Math.PI/2);
+					// dibuja el trazado 
+					ctx.beginPath();
+							for(i = 0; i < L; i++ ){
+							x = X + R * Math.cos( rad*i );
+							y = Y + R * Math.sin( rad*i );
+							ctx.lineTo(x, y);
+							}
+					ctx.closePath();
+					ctx.fill();
+					ctx.stroke();
+			}
+		}
+/*Arreglar desperfectos
+El pentágono ha salido muy bien, pero no estaría nada mal poder girarlo alrededor de su centro. Para esto tenemos que utilizar otros dos métodos del contexto: translate() y rotate().
+
+El método rotate() gira los trazados alrededor del origen del contexto ( x=0, y=0 ). Para girar un trazado alrededor de su centro:
+- lo construimos en el origen ( x=0, y=0 )
+- lo giramos con rotate()
+- lo trasladamos con translate() en el punto deseado, por ejemplo en el centro del <canvas>.*/
+
+</script>
+
+</body>
+</html>
